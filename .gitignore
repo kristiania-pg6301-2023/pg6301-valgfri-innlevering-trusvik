@@ -1,0 +1,6 @@
+/.idea/
+node_modules/
+dist/
+.env/
+.parcel-cache/
+.gitignore/
