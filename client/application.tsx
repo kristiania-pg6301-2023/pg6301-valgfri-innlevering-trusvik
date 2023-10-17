@@ -57,10 +57,16 @@ function CreateUser(){
     )
 }
 
-function ApplicationRoutes(){
+function FrontPage(){
+    return null;
+}
+
+export function ApplicationRoutes(){
+    return(
     <Routes>
         <Route path={"/"} element={<FrontPage />} />
         <Route path={"/create"} element={<CreateUser />} />
         <Route path={"/*"} element={<h1>Page Not Found</h1>} />
     </Routes>
+    );
 }

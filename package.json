@@ -6,12 +6,25 @@
   "scripts": {
     "dev": "concurrently npm:dev:client npm:dev:server",
     "dev:client": "cd client && npm run dev",
-    "dev:server": "cd server && npm run dev"
+    "dev:server": "cd server && npm run dev",
+    "prettier": "prettier --write .",
+    "check": "npm run check:prettier && npm run check:typescript && npm test",
+    "check:prettier": "prettier --check .",
+    "check:typescript": "npm run check:typescript:client && npm run check:typescript:server",
+    "check:typescript:client": "cd client && npm run check:typescript",
+    "check:typescript:server": "cd server && npm run check:typescript",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.1"
+    "concurrently": "^8.2.1",
+    "typescript": "^5.2.2"
   }
 }
