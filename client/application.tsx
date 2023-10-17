@@ -3,7 +3,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import {FormEvent} from "react";
 
 
-export function Application() {
+export function FrontPage() {
     const [counter, setCounter] = useState(0);
     return <>
         <h2 className={"webTitle"}>Welcome to our page</h2>
@@ -55,10 +55,6 @@ function CreateUser(){
             </div>
         </form>
     )
-}
-
-function FrontPage(){
-    return null;
 }
 
 export function ApplicationRoutes(){
