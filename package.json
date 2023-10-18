@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && node server.js",
     "dev": "concurrently npm:dev:client npm:dev:server",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install --include=dev",
     "prettier": "prettier --write .",
     "check": "npm run check:prettier && npm run check:typescript && npm test",
     "check:prettier": "prettier --check .",
@@ -17,10 +19,9 @@
     "test": "npm run test:client && npm run test:server",
     "test:client": "cd client && npm test",
     "test:server": "cd server && npm test",
-    "postinstall": "npm run install:client && npm run install:server",
-    "install:client": "cd client && npm install --include=dev",
-    "install:server": "cd server && npm install",
-    "heroku-postbuild": "cd client && npm install && ./node_modules/.bin/parcel build index.html"
+    "build":"npm run build:client",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start"
   },
   "keywords": [],
   "author": "",
