@@ -65,7 +65,7 @@ export function FrontPage() {
 function Authorized() {
     return <div>
         <h1>Welcome in!</h1>
-        <h2>Didnt manage the time well enough, so no jesttests...</h2>
+        <h2>Didnt manage the time well enough, so no jest-tests...</h2>
     </div>;
 }
 
