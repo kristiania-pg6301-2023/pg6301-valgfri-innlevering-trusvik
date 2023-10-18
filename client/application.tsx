@@ -9,7 +9,7 @@ export function FrontPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-
+    const navigate = useNavigate();
     const handleSubmit = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         try {
@@ -22,6 +22,7 @@ export function FrontPage() {
             });
 
             if (response.ok) {
+                    navigate("/authorized");
             } else {
                 // If the API returns an error, display it
                 const data = await response.json();
@@ -59,6 +60,10 @@ export function FrontPage() {
             </form>
         </>
     );
+}
+
+function Authorized() {
+    return <h1>Welcome in!</h1>;
 }
 
 
@@ -145,6 +150,7 @@ export function ApplicationRoutes(){
     <Routes>
         <Route path={"/"} element={<FrontPage />} />
         <Route path={"/create"} element={<CreateUser />} />
+        <Route path={"/authorized"} element={<Authorized />} />
         <Route path={"/*"} element={<h1>Page Not Found</h1>} />
     </Routes>
     );
