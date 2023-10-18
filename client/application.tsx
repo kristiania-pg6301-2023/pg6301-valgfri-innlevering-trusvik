@@ -68,7 +68,7 @@ function Authorized() {
 
 
 
-    function CreateUser(){
+export function CreateUser(){
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
