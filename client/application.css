@@ -1,0 +1,24 @@
+body{
+
+}
+
+@media (prefers-color-scheme: dark){
+    body{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #202020;
+        color: lightgray;
+    }
+    a{ color: lightgrey}
+}
+
+#root{
+    text-align: center;
+    background-color: slategray;
+    margin-top: 5%;
+    width: 80vh;
+    height: 80vh;
+    border-radius: 10px;
+}
+
